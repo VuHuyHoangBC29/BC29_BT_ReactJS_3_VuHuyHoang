@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import DanhSachGiay from "./DanhSachGiay";
 import shoesList from "../../Data/data.json";
 import ModalGiay from "./ModalGiay";
+import GioHang from "./GioHang";
 
 export default class BaiTapGiay extends Component {
   state = {
@@ -78,7 +79,18 @@ export default class BaiTapGiay extends Component {
       <div className="container">
         <h1 className="text-center text-primary">SHOES SHOP</h1>
         <div className="text-right">
-            <button className="btn btn-warning" data-toggle="modal" data-target="#modelId1" >Cart({this.state.cartList.length})</button>
+          {/* <button
+            className="btn btn-warning"
+            data-toggle="modal"
+            data-target="#modelId1"
+          >
+            Cart({this.state.cartList.length})
+          </button> */}
+          <GioHang
+            cartList={this.state.cartList}
+            handleQuantity={this.handleQuantity}
+            delete={this.delete}
+          />
         </div>
 
         <DanhSachGiay
@@ -87,7 +99,7 @@ export default class BaiTapGiay extends Component {
           addToCart={this.addToCart}
         />
 
-        <ModalGiay selectedGiay={this.state.selectedGiay}/>
+        <ModalGiay selectedGiay={this.state.selectedGiay} />
       </div>
     );
   }

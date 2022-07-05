@@ -9,7 +9,7 @@ export default class Giay extends Component {
         <img className="card-img-top" src={image} alt />
         <div className="card-body">
           <h4 className="card-title">{name}</h4>
-          <p className="card-text">{price}$</p>
+          <p className="card-text">${price}</p>
           <button
             className="btn btn-success"
             data-toggle="modal"
